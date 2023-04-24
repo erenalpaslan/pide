@@ -1,8 +1,7 @@
 package client.pide.view.products
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.foundation.layout.Column
+import androidx.compose.runtime.*
 
 /**
  * Created by erenalpaslan on 23.04.2023
@@ -10,10 +9,26 @@ import androidx.compose.runtime.getValue
 @Composable
 fun ProductsScreen(viewModel: ProductsViewModel = ProductsViewModel()) {
     val uiState by viewModel.uiState.collectAsState()
+    val newProductDialogState = remember {
+        mutableStateOf(false)
+    }
 
-    when (uiState) {
-        ProductsUiState.EmptyList -> ProductEmptyListContent()
-        ProductsUiState.Loading -> {}
-        is ProductsUiState.ProductListed -> ProductListContent((uiState as ProductsUiState.ProductListed).list)
+    Column {
+        ProductTableHeader(
+            onNewProductClicked = {
+                newProductDialogState.value = true
+            }
+        )
+        when (uiState) {
+            ProductsUiState.EmptyList -> ProductEmptyListContent()
+            ProductsUiState.Loading -> {}
+            is ProductsUiState.ProductListed -> ProductListContent((uiState as ProductsUiState.ProductListed).list)
+        }
+    }
+
+    NewProductDialog(
+        show = newProductDialogState
+    ) {
+
     }
 }

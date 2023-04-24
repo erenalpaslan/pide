@@ -15,7 +15,7 @@ import client.pide.style.PideColors.red
  * Created by erenalpaslan on 23.04.2023
  */
 data class Product(
-    val id: Int,
+    val id: String,
     val name: String,
     val imageUrl: String = "",
     val createdAt: String?,

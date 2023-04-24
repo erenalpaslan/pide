@@ -19,75 +19,75 @@ class ProductsViewModel {
             ProductsUiState.ProductListed(
                 list = listOf(
                     Product(
-                        3034,
+                        "3034",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),
                     Product(
-                        3035,
+                        "3035",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.UNKNOWN
                     ),
                     Product(
-                        3036,
+                        "3036",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.OUT_OF_STOCK
                     ),
                     Product(
-                        3037,
+                        "3037",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),
                     Product(
-                        3038,
+                        "3038",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.OUT_OF_STOCK
                     ),
                     Product(
-                        3030,
+                        "3030",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),Product(
-                        3029,
+                        "3029",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),Product(
-                        3034,
+                        "3034",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),
                     Product(
-                        3034,
+                        "3034",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),
                     Product(
-                        3034,
+                        "3034",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",
                         ProductStatus.ON_STOCK
                     ),
                     Product(
-                        3034,
+                        "3034",
                         "bilezik",
                         "https://picsum.photos/id/237/200/300",
                         "23 April, 2023",

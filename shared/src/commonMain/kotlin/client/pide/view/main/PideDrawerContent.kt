@@ -26,7 +26,7 @@ fun PideDrawerContent(
         modifier = Modifier
             .background(cultured)
             .padding(16.dp)
-            .width(250.dp)
+            .width(200.dp)
             .fillMaxHeight()
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
