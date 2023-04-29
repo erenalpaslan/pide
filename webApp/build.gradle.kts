@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
+    id("io.ktor.plugin") version "2.3.0"
 }
 
 kotlin {

@@ -6,9 +6,11 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import client.pide.style.PideColors.azure
 import client.pide.style.PideColors.cultured
+import client.pide.style.PideColors.gray700
 
 /**
  * Created by erenalpaslan on 23.04.2023
@@ -27,9 +29,9 @@ fun DrawerItem(
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
             containerColor = if (selected)
-                azure
+                gray700
             else
-                cultured
+                Color.Transparent
         ),
         shape = MaterialTheme.shapes.small
     ) {

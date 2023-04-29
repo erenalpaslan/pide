@@ -21,5 +21,4 @@ pluginManagement {
 rootProject.name = "pide"
 
 include(":shared")
-include(":desktopApp")
 include(":webApp")

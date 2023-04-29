@@ -14,6 +14,11 @@ fun ProductsScreen(viewModel: ProductsViewModel = ProductsViewModel()) {
     }
 
     Column {
+        ProductScreenHeader(
+            onNewClicked = {
+
+            }
+        )
         ProductTableHeader(
             onNewProductClicked = {
                 newProductDialogState.value = true

@@ -1,20 +1,20 @@
 package client.pide.style
 
-import androidx.compose.material3.LocalTextStyle
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ProvideTextStyle
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import client.pide.style.PideColors.azure
+import client.pide.style.PideColors.black
 import client.pide.style.PideColors.cultured
+import client.pide.style.PideColors.gray200
+import client.pide.style.PideColors.slateBlue
 import client.pide.style.PideColors.white
 
 object PideColors {
     val green = Color(0xFF57BF8E)
     val white = Color(0xFFFFFFFF)
-    val black = Color(0xFF212121)
+    val black = Color(0xFF101828)
     val gray = Color(0xFFD8DADC)
     val darkGray = Color(0xFF979797)
     val red = Color(0xFFE74E3C)
@@ -32,17 +32,22 @@ object PideColors {
     val cultured = Color(0xFFf7f7f7)
     val raisinBlack = Color(0xFF212121)
     val crayola = Color(0xFF12B76A)
+    val slateBlue = Color(0xFF7F56D9)
+    val gray700 = Color(0xFF344054)
+    val gray200 = Color(0xFFEAECF0)
 }
 
 @Composable
 fun PideTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = lightColorScheme(
-            primary = azure,
-            primaryContainer = azure,
+        colorScheme = darkColorScheme(
+            primary = slateBlue,
+            onPrimary = white,
+            primaryContainer = black,
             onPrimaryContainer = white,
             tertiary = cultured,
             secondary = white,
+            outlineVariant = gray200
         )
     ) {
         ProvideTextStyle(LocalTextStyle.current.copy(letterSpacing = 0.sp)) {

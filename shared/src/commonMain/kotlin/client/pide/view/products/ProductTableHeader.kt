@@ -34,32 +34,22 @@ fun ProductTableHeader(
             .border(BorderStroke(2.dp, cultured), RoundedCornerShape(8.dp, 8.dp)),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Spacer(Modifier.width(16.dp))
+        Spacer(Modifier.width(18.dp))
         Text(
             "#",
             fontWeight = FontWeight.W700,
             modifier = Modifier.defaultMinSize(minWidth = 100.dp),
             textAlign = TextAlign.Center
         )
-        Spacer(Modifier.width(60.dp))
+        Spacer(Modifier.width(62.dp))
         Row(
             modifier = Modifier.fillMaxWidth().weight(1f),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text("Name")
-            Text("Availability")
+            Text("Status")
         }
-        Spacer(Modifier.width(16.dp))
-        OutlinedButton(
-            onClick = {
-                onNewProductClicked()
-            }
-        ) {
-            Icon(imageVector = Icons.Rounded.Add, contentDescription = "Add")
-            Spacer(Modifier.width(8.dp))
-            Text(text = "New Product")
-        }
-        Spacer(Modifier.width(16.dp))
+        Spacer(Modifier.width(160.dp))
     }
 }

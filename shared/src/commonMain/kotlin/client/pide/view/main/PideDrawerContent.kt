@@ -2,8 +2,9 @@ package client.pide.view.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ExitToApp
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
@@ -24,20 +25,20 @@ fun PideDrawerContent(
 ) {
     Column(
         modifier = Modifier
-            .background(cultured)
+            .background(MaterialTheme.colorScheme.primaryContainer)
             .padding(16.dp)
             .width(200.dp)
             .fillMaxHeight()
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Pide v1.0.0")
+            Text("Pide v1.0.0", color = white)
         }
         Spacer(Modifier.height(32.dp))
         DrawerItem.values().forEach {item ->
             val selected = item.itemId == drawerScreen.value.itemId
             DrawerItem(
                 label = {
-                    Text(item.title, color = if (selected) white else black)
+                    Text(item.title)
                 },
                 onClick = {
                     drawerScreen.value = item
@@ -46,12 +47,36 @@ fun PideDrawerContent(
                     Icon(
                         imageVector = item.icon,
                         contentDescription = "${item.itemId}",
-                        tint = if (selected) white else black
+                        tint = white
                     )
                 },
                 selected = selected
             )
             Spacer(Modifier.height(4.dp))
+        }
+        Column(
+            modifier = Modifier.fillMaxHeight().weight(1f),
+            verticalArrangement = Arrangement.Bottom
+        ) {
+            Divider()
+            Spacer(Modifier.height(12.dp))
+            Row (
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ){
+                Column {
+                    Text("Jhon Doe", color = white)
+                    Text("jhondoe@gmail.com", color = white)
+                }
+                Spacer(Modifier.width(8.dp))
+                IconButton(onClick = {}) {
+                    Icon(
+                        imageVector = Icons.Rounded.ExitToApp,
+                        contentDescription = "Exit",
+                        tint = white
+                    )
+                }
+            }
         }
     }
 }

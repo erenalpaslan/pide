@@ -13,7 +13,6 @@ version = "1.0-SNAPSHOT"
 val ktorVersion = extra["ktor.version"]
 
 kotlin {
-    jvm("desktop")
     js(IR) {
         browser()
     }
@@ -39,14 +38,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:1.8.20-RC")
 
-            }
-        }
-
-        val desktopMain by getting {
-            dependencies {
-                implementation(compose.desktop.common)
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.6.4")
-                implementation("io.ktor:ktor-client-cio:$ktorVersion")
             }
         }
     }

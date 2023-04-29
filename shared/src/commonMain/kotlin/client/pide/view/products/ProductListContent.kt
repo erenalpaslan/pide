@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import client.pide.data.model.Product
 import client.pide.style.PideColors.cultured
+import client.pide.style.PideColors.gray200
 import client.pide.style.PideColors.raisinBlack
 import client.pide.style.PideColors.red
 import client.pide.style.PideColors.white
@@ -86,30 +87,26 @@ fun ProductListItem(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(text = item.name, overflow = TextOverflow.Ellipsis)
-            FilterChip(
-                onClick = {},
-                colors = FilterChipDefaults.filterChipColors(
-                    disabledContainerColor = item.status.color.copy(alpha = 0.2f)
-                ),
-                selected = false,
-                label = {
+            Column(
+                modifier = Modifier.width(120.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(50.dp))
+                        .border(BorderStroke(1.dp, item.status.color), RoundedCornerShape(50.dp))
+                ) {
                     Text(
                         text = item.status.status,
-                        style = MaterialTheme.typography.labelMedium,
-                        color = item.status.color
+                        style = MaterialTheme.typography.labelSmall,
+                        color = item.status.color,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                     )
-                },
-                leadingIcon = {
-                    Icon(
-                        imageVector = item.status.icon,
-                        contentDescription = "",
-                        tint = item.status.color
-                    )
-                },
-                enabled = false
-            )
+                }
+            }
         }
-        Spacer(Modifier.width(90.dp))
+        Spacer(Modifier.width(16.dp))
         IconButton(onClick = {
 
         }) {
