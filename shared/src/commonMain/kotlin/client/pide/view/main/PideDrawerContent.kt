@@ -9,11 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import client.pide.DrawerItem
-import client.pide.style.PideColors.black
-import client.pide.style.PideColors.cultured
 import client.pide.style.PideColors.white
 
 /**
@@ -21,7 +18,8 @@ import client.pide.style.PideColors.white
  */
 @Composable
 fun PideDrawerContent(
-    drawerScreen: MutableState<DrawerItem>
+    drawerScreen: MutableState<DrawerItem>,
+    onLogoutClicked: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -69,7 +67,7 @@ fun PideDrawerContent(
                     Text("jhondoe@gmail.com", color = white)
                 }
                 Spacer(Modifier.width(8.dp))
-                IconButton(onClick = {}) {
+                IconButton(onClick = onLogoutClicked) {
                     Icon(
                         imageVector = Icons.Rounded.ExitToApp,
                         contentDescription = "Exit",

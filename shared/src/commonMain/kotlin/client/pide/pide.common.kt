@@ -18,6 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import client.pide.router.RouteBuilder
+import client.pide.router.Router
 import client.pide.style.PideColors.white
 import client.pide.view.dashboard.DashboardScreen
 import client.pide.view.main.PideDrawerContent
@@ -43,15 +45,20 @@ enum class DrawerItem(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PideMain() {
+fun PideMain(builder: RouteBuilder) {
     val drawerScreen = remember {
         mutableStateOf(DrawerItem.DASHBOARD)
     }
 
+    val router = Router.current
+
     PermanentNavigationDrawer(
         drawerContent = {
             PideDrawerContent(
-                drawerScreen = drawerScreen
+                drawerScreen = drawerScreen,
+                onLogoutClicked = {
+                    router.navigate("/login")
+                }
             )
         },
         modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer)
@@ -73,3 +80,4 @@ fun PideMain() {
         }
     }
 }
+

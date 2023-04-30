@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun FilledButton(
     onCLicked: () -> Unit,
+    modifier: Modifier = Modifier,
     text: String? = null,
     icon: @Composable () -> Unit = {}
 ) {
@@ -22,6 +23,7 @@ fun FilledButton(
         onClick = {
             onCLicked()
         },
+        modifier = modifier,
         shape = MaterialTheme.shapes.small
     ) {
         icon()

@@ -1,13 +1,13 @@
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
-    id("io.ktor.plugin") version "2.3.0"
 }
 
 kotlin {
     js(IR) {
-        browser()
-        binaries.executable()
+        browser() {
+            binaries.executable()
+        }
     }
     sourceSets {
         val jsMain by getting  {
@@ -20,4 +20,10 @@ kotlin {
 
 compose.experimental {
     web.application {}
+}
+
+afterEvaluate {
+    rootProject.extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension> {
+        versions.webpackCli.version = "4.10.0"
+    }
 }

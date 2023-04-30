@@ -29,6 +29,8 @@ kotlin {
                 implementation(compose.components.resources)
                 implementation(compose.materialIconsExtended)
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+                implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:1.8.20-RC")
+                api("app.softwork:kotlinx-uuid-core:0.0.18")
             }
         }
 
@@ -36,8 +38,6 @@ kotlin {
             dependsOn(commonMain)
             dependencies {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
-                implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:1.8.20-RC")
-
             }
         }
     }
