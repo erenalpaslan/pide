@@ -80,7 +80,6 @@ fun LoginScreen() {
                                 remember = it
                             },
                         )
-                        Spacer(Modifier.width(4.dp))
                         Text("Remember")
                     }
 
