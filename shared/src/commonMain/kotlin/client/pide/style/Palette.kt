@@ -48,7 +48,9 @@ fun PideTheme(content: @Composable () -> Unit) {
             tertiary = cultured,
             secondary = white,
             outlineVariant = gray200,
-            onSurface = slateBlue
+            onSurface = slateBlue,
+            surfaceVariant = white,
+            surface = white
         )
     ) {
         ProvideTextStyle(LocalTextStyle.current.copy(letterSpacing = 0.sp)) {

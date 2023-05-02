@@ -17,7 +17,7 @@ fun InfoCard(
     title: @Composable () -> Unit,
     value: @Composable () -> Unit,
 ) {
-    Card(
+    ElevatedCard(
         modifier = modifier.fillMaxWidth()
             .defaultMinSize(minHeight = 120.dp),
         shape = MaterialTheme.shapes.medium

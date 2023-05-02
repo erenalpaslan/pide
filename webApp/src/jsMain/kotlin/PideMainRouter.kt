@@ -1,9 +1,7 @@
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import client.pide.BrowserRouter
-import client.pide.HashRouter
 import client.pide.PideMain
-import client.pide.router.Router
 import client.pide.view.login.LoginScreen
 
 /**
