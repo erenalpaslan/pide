@@ -19,11 +19,6 @@ fun ProductsScreen(viewModel: ProductsViewModel = ProductsViewModel()) {
 
             }
         )
-        ProductTableHeader(
-            onNewProductClicked = {
-                newProductDialogState.value = true
-            }
-        )
         when (uiState) {
             ProductsUiState.EmptyList -> ProductEmptyListContent()
             ProductsUiState.Loading -> {}

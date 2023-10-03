@@ -20,7 +20,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import client.pide.data.model.Product
 import client.pide.style.PideColors.cultured
@@ -28,6 +30,7 @@ import client.pide.style.PideColors.gray200
 import client.pide.style.PideColors.raisinBlack
 import client.pide.style.PideColors.red
 import client.pide.style.PideColors.white
+import client.pide.view.components.Table
 import org.jetbrains.skia.Image
 
 /**
@@ -36,15 +39,59 @@ import org.jetbrains.skia.Image
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ProductListContent(list: List<Product>) {
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        itemsIndexed(list) { index, item ->
-            ProductListItem(item, index) { _, _ ->
-
-            }
+    val cellWidth: (Int) -> Dp = { index ->
+        when (index) {
+            1 -> 300.dp
+            2 -> 150.dp
+            else -> 150.dp
         }
     }
+    val headerCellTitle: @Composable (Int) -> Unit = { index ->
+        val value = when (index) {
+            0 -> "#"
+            1 -> "Name"
+            2 -> "Date"
+            3 -> "Type"
+            else -> ""
+        }
+
+        Text(
+            text = value,
+            style = MaterialTheme.typography.titleMedium,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(16.dp),
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            fontWeight = FontWeight.Black,
+        )
+    }
+    val cellText: @Composable (Int, Int) -> Unit = { index, o ->
+        val value = when (index) {
+            0 -> "#1"
+            1 -> "Örnek gelir veya gider ismi"
+            2 -> "1 May 2023"
+            3 -> "Gelir"
+            else -> ""
+        }
+
+        Text(
+            text = value,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(16.dp),
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
+    }
+
+
+    Table(
+        columnCount = 4,
+        cellWidth = cellWidth,
+        data = listOf(1,2,3,4,5,6,7),
+        modifier = Modifier.verticalScroll(rememberScrollState()),
+        headerCellContent = headerCellTitle,
+        cellContent = cellText
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
